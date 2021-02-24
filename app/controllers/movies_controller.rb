@@ -38,6 +38,10 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  def ratings_to_show
+    r = Array.new
+    r = :ratings.keys
+  end
   private
   # Making "internal" methods private is not required, but is a common practice.
   # This helps make clear which methods respond to requests, and which ones do not.
