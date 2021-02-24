@@ -9,6 +9,9 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
     @all_ratings = Movie.all_ratings
+    @ratings_to_show = Array.new
+    if :ratings != nil 
+      @ratings_to_show = :ratings.keys
   end
 
   def new
@@ -41,8 +44,7 @@ class MoviesController < ApplicationController
   end
 
   def ratings_to_show
-    r = Array.new
-    r = :ratings.keys
+    
   end
   
   private
