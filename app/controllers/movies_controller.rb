@@ -12,7 +12,7 @@ class MoviesController < ApplicationController
     @ratings_to_show = Array.new
     if params[:ratings] != nil
       @ratings_to_show = params[:ratings].keys
-      @movies = Movie.with_ratings(params[:ratings])
+      @movies = Movie.with_ratings(params[:ratings].keys)
     end
   end
 
