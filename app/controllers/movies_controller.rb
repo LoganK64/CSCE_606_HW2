@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
   end
 
   def index
+    @sort_mode = nil
     if params[:sort] != nil
       @sort_mode = params[:sort]
     @movies = Movie.all.order(@sort_mode) #set to all
