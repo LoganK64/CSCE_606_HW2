@@ -17,13 +17,13 @@ class MoviesController < ApplicationController
       session[:ratings] = Movie.all_ratings
     end
     if params[:ratings]!=nil
-      session[:ratings] = params[:ratings]
+      session[:ratings] = params[:ratings].keys
     end
     
     @sort_mode = session[:sort_mode]
     @all_ratings = Movie.all_ratings
-    @ratings_to_show = session[:ratings].keys
-    @movies = Movie.with_ratings(params[:ratings].keys).order(@sort_mode) #set to just rating defined
+    @ratings_to_show = session[:ratings]
+    @movies = Movie.with_ratings(session[:ratings]).order(@sort_mode) #set to just rating defined
   end
 
   def new
