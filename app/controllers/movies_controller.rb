@@ -45,9 +45,6 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
-  def ratings_to_show
-    
-  end
   
   private
   # Making "internal" methods private is not required, but is a common practice.
