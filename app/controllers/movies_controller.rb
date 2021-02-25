@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
 
   def index
     if session[:sort_mode].nil?
-      session[:sort_mode] = "default"
+      session[:sort_mode] = nil
     end
     if params[:sort]!=nil
       session[:sort_mode] = params[:sort]
