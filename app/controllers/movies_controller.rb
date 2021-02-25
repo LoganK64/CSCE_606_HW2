@@ -11,8 +11,8 @@ class MoviesController < ApplicationController
     @all_ratings = Movie.all_ratings
     @ratings_to_show = Array.new
     if params[:ratings] != nil
-      @ratings_to_show = params[:ratings].keys.map { |key| key.tr('\"\"','') }
-      @movies = Movie.with_ratings(params[:ratings].keys.map { |key| key.tr('\"\"','') }).order(params[:sort]) #set to just rating defined
+      @ratings_to_show = params[:ratings].keys.map { |key| key.tr('\"','') }
+      @movies = Movie.with_ratings(params[:ratings].keys.map { |key| key.tr('\"','') }).order(params[:sort]) #set to just rating defined
     end
   end
 
