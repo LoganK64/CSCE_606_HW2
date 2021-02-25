@@ -12,11 +12,7 @@ class MoviesController < ApplicationController
     @ratings_to_show = Array.new
     if params[:ratings] != nil
       @ratings_to_show = params[:ratings].keys
-      @movies = Movie.with_ratings(params[:ratings].keys).order(params[:sort]) #set to just rating defined
-    end
-    if params[:pass] !=nil
-      @ratings_to_show = params[:pass].keys
-      @movies = Movie.with_ratings(params[:pass].keys).order(params[:sort])
+      @movies = Movie.with_ratings(params[:ratings].keys.tr('\"\"','')).order(params[:sort]) #set to just rating defined
     end
   end
 
