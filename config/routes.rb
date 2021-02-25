@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'movies#index'
-  match 'clearSession' => 'movies#session_clear', :as => :session_clear
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

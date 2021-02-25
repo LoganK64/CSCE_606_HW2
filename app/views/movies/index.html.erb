@@ -42,24 +42,4 @@
   </tbody>
 </table>
 <%= link_to 'Add new movie', new_movie_path, :class => 'btn btn-primary' %>
-<script type=”text/javascript”>
 
-window.onbeforeunload = function (){
-
-$.ajax({
-
-url: “<%=session_clear_url%>”,
-
-type: “POST”,
-
-data: {},
-
-contentType: “application/json; charset=utf-8”,
-
-dataType: “json”
-
-});
-
-};
-
-</script>
