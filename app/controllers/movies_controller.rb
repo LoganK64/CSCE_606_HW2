@@ -7,7 +7,10 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @sort_mode = params[:sort]
+    if defined? @sort_mode.nil?
+      @sort_mode = "default"
+    if params[:sort] != nil
+      @sort_mode = params[:sort]
     @movies = Movie.all.order(@sort_mode) #set to all
     @all_ratings = Movie.all_ratings
     @ratings_to_show = Array.new
